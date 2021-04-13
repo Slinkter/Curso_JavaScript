@@ -62,13 +62,14 @@ document.write("Array original <b>" + nombres + "</b><br><br>");
 document.write("Array modificado <b>" + rpta + "</b><br><br>");
 // estos son metodos  repeticion
 document.write("<br> ========== Metodoos de repeticion ========== <br>");
-document.write("---> .filter <br>");
+document.write("---> .filter() <br>");
 let array_lista = ["compras", "ventas", "operaciones", "marketing", "colegio",'universidad'];
 array_lista.filter((elemento) => {
   if (6 < elemento.length) {
     document.write(elemento +  ' tiene<b>' + elemento.length +'</b>caracteres' +"<br>"  );
   }
 });
+document.write("<br>---> .forEach() <br>");
 array_lista.forEach((elemento) => {
     document.write(elemento +'<br>')
   });

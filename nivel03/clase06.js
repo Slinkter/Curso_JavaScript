@@ -1,3 +1,4 @@
+/*
 "use strict";
 let count_textura = document.querySelector(".texturas").children.length;
 const zona = document.querySelector(".zona");
@@ -25,3 +26,6 @@ const transferirTextura = (n, e) => {
   console.log("1");
   e.dataTransfer.setData("textura", n);
 };
+
+
+*/

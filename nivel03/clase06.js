@@ -1,5 +1,6 @@
-/*
 "use strict";
+/*
+
 let count_textura = document.querySelector(".texturas").children.length;
 const zona = document.querySelector(".zona");
 
@@ -29,3 +30,31 @@ const transferirTextura = (n, e) => {
 
 
 */
+
+const archivo = document.getElementById("archivo");
+
+archivo.addEventListener("change", (e) => {
+  ReaderFile(archivo.files[0]);
+});
+
+const ReaderFile = (file_element) => {
+  const reader = new FileReader();
+  reader.readAsText(file_element);
+  reader.addEventListener("load", (e) => {
+    // convertir de texto a json
+    // console.log( typeof e.currentTarget.result);
+    // console.log( JSON.parse(e.currentTarget.result) );
+    // recoger con un for
+    let array_data = JSON.parse(e.currentTarget.result);
+    for (let element in array_data) {
+      console.log(array_data[element]);
+      let mail = array_data[element].email
+    
+      document.write(`Email  : ${mail}`)
+      document.write(`<br>  `)
+      if (array_data[element].id >= 10) {
+        break;
+      }
+    }
+  });
+};

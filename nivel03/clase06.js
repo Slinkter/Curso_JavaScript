@@ -31,10 +31,9 @@ const transferirTextura = (n, e) => {
 
 */
 
-const archivo = document.getElementById("archivo");
-
-archivo.addEventListener("change", (e) => {
-  ReaderFile(archivo.files[0]);
+const input_archivo = document.getElementById("archivo");
+input_archivo.addEventListener("change", (e) => {
+  ReaderFile(input_archivo.files[0]);
 });
 
 const ReaderFile = (file_element) => {
@@ -48,13 +47,15 @@ const ReaderFile = (file_element) => {
     let array_data = JSON.parse(e.currentTarget.result);
     for (let element in array_data) {
       console.log(array_data[element]);
-      let mail = array_data[element].email
-    
-      document.write(`Email  : ${mail}`)
-      document.write(`<br>  `)
-      if (array_data[element].id >= 10) {
-        break;
-      }
+      let id = array_data[element].id;
+      let name = array_data[element].name;
+      let username = array_data[element].username;
+      let mail = array_data[element].email;
+
+      document.write(`<br> ===== ${id} ===== <br> `);
+      document.write(`Name  : ${name}<br> `);
+      document.write(`Username  : ${username}<br> `);
+      document.write(`Email  : ${mail}<br> `);
     }
   });
 };

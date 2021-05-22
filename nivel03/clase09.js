@@ -1,12 +1,18 @@
 "use strict";
 
-const caja3 = document.querySelector(".caja3");
+const cajas = document.querySelectorAll(".caja");
 const verifyVisibility = (entries) => {
-  const entry = entries[0];
-  console.log(entry);
-  console.log(entry.isIntersecting);
+  for (const element of entries) {
+    if (element.isIntersecting) {
+     console.log(element);
+     console.log(element.target);
+      console.log("se esta viendo la ", element.target.textContent);
+    }
+  }
 };
 
 const observer = new IntersectionObserver(verifyVisibility);
 
-observer.observe(caja3)
+for(const caja of cajas){
+  observer.observe(caja);
+}

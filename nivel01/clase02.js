@@ -16,6 +16,9 @@ document.write("<br>-----------<br>");
 document.write("<br>");
 // mostrar datos
 document.write(pc1["nombre"]);
+document.write(pc1.nombre);
+// mostrar datos
+document.write(pc1.nombre);
 document.write("<br>");
 document.write(pc2[0]);
 document.write("<br>");
@@ -66,7 +69,7 @@ do {
   numero++;
 } while (numero <= 6);
 
-// bucle for - termina la operacion 
+// bucle for - termina la operacion
 document.write("<br>-----------<br>");
 document.write("FOR  - break <br>");
 for (let index = 0; index < 10; index++) {

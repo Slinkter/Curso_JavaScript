@@ -11,3 +11,10 @@ body {
 span {
     color: blue;
 }
+
+.classmartes{
+
+    background: green;
+    color: white;
+    padding: 10px;
+}

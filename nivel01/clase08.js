@@ -1,31 +1,32 @@
 // 8:53:22
-
 const contenedor = document.querySelector(".contenedor");
+contenedor.style.background = "red";
+//
+const text = document.createTextNode("Item 1");
 const item = document.createElement("LI");
-const textDelITem = document.createTextNode("probando creando una lista");
-item.appendChild(textDelITem);
+item.appendChild(text);
+item.style.background = "yellow";
+//
 contenedor.appendChild(item);
-
-
+//
 const fragmento = document.createDocumentFragment();
-
-for (let index = 0; index < 2; index++) {
-  const item001 = document.createElement("LI");
-  item001.innerHTML = "Este es un item de la lista";
-  fragmento.appendChild(item001);
+//
+for (let i = 0; i < 5; i++) {
+  const element = document.createElement("LI");
+  element.innerHTML = `Este es un item de la lista ${i}`;
+  element.style.background= "green"
+  fragmento.appendChild(element);
 }
-
+//
+contenedor.appendChild(fragmento);
 //
 
 const primierhijo = contenedor.firstElementChild;
 const ultimohijo = contenedor.lastElementChild;
 const hijos = contenedor.childNodes;
+const array = [...hijos]
 
-
-contenedor.appendChild(fragmento);
-console.log(item);
-console.log(textDelITem);
 console.log(primierhijo);
 console.log(ultimohijo);
 console.log(hijos);
-hijos.forEach(item => console.log(item))
+console.log(array);

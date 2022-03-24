@@ -13,7 +13,7 @@ titulo.style.background = "red";
 //titulo.setAttribute("hidden", "true");
 //titulo.removeAttribute("hidden");
 //
-titulo.classList.add("classmartes");
+titulo.classList.add("dasdas");
 //
 let valor_titulo = titulo.classList.item(1);
 let valor_contains = titulo.classList.contains("classmartes");

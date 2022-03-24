@@ -1,9 +1,13 @@
 body {
 
-    color: rgb(255, 11, 11);
+
     font-family: sans-serif;
 }
 
 * {
     padding: 10px 20px;
+}
+
+span {
+    color: blue;
 }

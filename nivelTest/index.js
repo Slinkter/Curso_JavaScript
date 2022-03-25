@@ -1,11 +1,47 @@
-const container = document.querySelector(".container");
-const item = document.createElement("li");
-const text = document.createTextNode("esto es un texto");
-item.appendChild(text);
-container.appendChild(item);
+const sumar = (x, y) => {
+  return parseInt(parseInt(x) + parseInt(y));
+};
 
-for (i = 0; i <= 5; i++) {
-  const element = document.createElement("li");
-  element.textContent = "hola";
-  container.appendChild(element);
+const restar = (x, y) => {
+  return parseInt(parseInt(x) - parseInt(y));
+};
+
+const multiplicar = (x, y) => {
+  return parseInt(parseInt(x) * parseInt(y));
+};
+
+const dividir = (x, y) => {
+  return parseInt(parseInt(x) / parseInt(y));
+};
+
+const ask = prompt("ingresar metodo ");
+
+if (ask === "1") {
+  const a = prompt("ingresar a");
+  const b = prompt("ingresar b");
+  const rpta = sumar(a, b);
+  document.write(rpta);
+  console.log(rpta);
+  alert(rpta);
+} else if (ask === "2") {
+  const a = prompt("ingresar a");
+  const b = prompt("ingresar b");
+  const rpta = restar(a, b);
+  document.write(rpta);
+  console.log(rpta);
+  alert(rpta);
+} else if (ask === "3") {
+  const a = prompt("ingresar a");
+  const b = prompt("ingresar b");
+  const rpta = multiplicar(a, b);
+  document.write(rpta);
+  console.log(rpta);
+  alert(rpta);
+} else if (ask === "4") {
+  const a = prompt("ingresar a");
+  const b = prompt("ingresar b");
+  const rpta = dividir(a, b);
+  document.write(rpta);
+  console.log(rpta);
+  alert(rpta);
 }

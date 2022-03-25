@@ -1,6 +1,5 @@
 dineroCofla = prompt("Cuanto dinero tienes Cofla?");
-dineroRoberto = prompt("Cuanto dinero tienes Roberto?");
-dineroPedro = prompt("Cuanto dinero tienes Pedro?");
+
 
 if (dineroCofla > 0.6) {
   alert("comprate el helado de agua ");

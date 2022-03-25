@@ -40,7 +40,7 @@ const obtenerInstagram = (posicion) => {
 };
 
 // ejecutamos
-let position = 10;
+let position = 1;
 obtenerpersonas(position)
   .then((respuesta) => {
     console.log(respuesta.nombre);

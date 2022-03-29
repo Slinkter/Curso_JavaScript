@@ -1,47 +1,49 @@
-const sumar = (x, y) => {
-  return parseInt(parseInt(x) + parseInt(y));
-};
+const data = [
+  ["luis cave", "@luiscave"], // 0
+  ["kiara keter", "@kariaketer"], // 1
+  ["Jorge Camacho", "@jorgecamacho"], // 2
+  ["Norma flores", "@floresnorma"], // 3
+  ["mauro jiro", "@mjirom"], // 4
+];
 
-const restar = (x, y) => {
-  return parseInt(parseInt(x) - parseInt(y));
-};
-
-const multiplicar = (x, y) => {
-  return parseInt(parseInt(x) * parseInt(y));
-};
-
-const dividir = (x, y) => {
-  return parseInt(parseInt(x) / parseInt(y));
-};
-
-const ask = prompt("ingresar metodo ");
-
-if (ask === "1") {
-  const a = prompt("ingresar a");
-  const b = prompt("ingresar b");
-  const rpta = sumar(a, b);
-  document.write(rpta);
-  console.log(rpta);
-  alert(rpta);
-} else if (ask === "2") {
-  const a = prompt("ingresar a");
-  const b = prompt("ingresar b");
-  const rpta = restar(a, b);
-  document.write(rpta);
-  console.log(rpta);
-  alert(rpta);
-} else if (ask === "3") {
-  const a = prompt("ingresar a");
-  const b = prompt("ingresar b");
-  const rpta = multiplicar(a, b);
-  document.write(rpta);
-  console.log(rpta);
-  alert(rpta);
-} else if (ask === "4") {
-  const a = prompt("ingresar a");
-  const b = prompt("ingresar b");
-  const rpta = dividir(a, b);
-  document.write(rpta);
-  console.log(rpta);
-  alert(rpta);
+class Persona {
+  constructor(name, ig) {
+    this.name = name;
+    this.ig = ig;
+  }
 }
+
+const personas = [];
+
+for (item in data) {
+  personas.push(new Persona(data[item][0], data[item][1]));
+}
+
+const obtenerInfoPersonaName = (position) => {
+  return new Promise((res, rej) => {
+    if (personas[position] == "undefined") {
+      rej("no existe le nombre la persona en tal posicion");
+    } else {
+      res(personas[position].name);
+    }
+  });
+};
+
+const obtenerInfoPersonaIG = (position) => {
+  return new Promise((res, rej) => {
+    if (personas[position] == "undefined") {
+      rej("no existe el ig de la persona");
+    } else {
+      res(personas[position].ig);
+    }
+  });
+};
+
+position = 1;
+
+obtenerInfoPersonaName(position)
+  .then((rpta) => {
+    console.log(rpta);
+    return obtenerInfoPersonaIG(position);
+  })
+  .then((rpta) => console.log(rpta));

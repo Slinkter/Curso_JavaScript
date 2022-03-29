@@ -44,10 +44,13 @@ let position = 1;
 obtenerpersonas(position)
   .then((respuesta) => {
     console.log(respuesta.nombre);
+    document.write(respuesta.nombre)
     return obtenerInstagram(position);
   })
   .then((respuesta) => {
     console.log(respuesta);
+    document.write("<br/>")
+    document.write(respuesta)
   })
   .catch((e) => {
     console.log(e);

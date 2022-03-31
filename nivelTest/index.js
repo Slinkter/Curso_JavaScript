@@ -1,49 +1,36 @@
-const data = [
-  ["luis cave", "@luiscave"], // 0
-  ["kiara keter", "@kariaketer"], // 1
-  ["Jorge Camacho", "@jorgecamacho"], // 2
-  ["Norma flores", "@floresnorma"], // 3
-  ["mauro jiro", "@mjirom"], // 4
-];
+const getInfoUser = async () => {
+  const container = document.querySelector(".root");
 
-class Persona {
-  constructor(name, ig) {
-    this.name = name;
-    this.ig = ig;
+  //
+  const fragmento = document.createDocumentFragment();
+  //
+  let peticion = await fetch("https://reqres.in/api/users?page=2");
+  let resultado = await peticion.json();
+  let data = resultado.data;
+  //
+  for (item in data) {
+    console.log("-----------------------------");
+    br_espacio = document.createElement("br");
+    h2_fn = document.createElement("H2");
+    h2_ln = document.createElement("H2");
+    h2_email = document.createElement("H2");
+    //
+    h2_fn.classList.add("first_name");
+    h2_ln.classList.add("last_name");
+    h2_email.classList.add("email");
+    //
+    h2_fn.innerHTML = data[item].first_name;
+    h2_ln.innerHTML = data[item].last_name;
+    h2_email.innerHTML = data[item].email;
+    //
+    fragmento.appendChild(br_espacio);
+    fragmento.appendChild(h2_fn);
+    fragmento.appendChild(h2_ln);
+    fragmento.appendChild(h2_email);
+    //
   }
-}
-
-const personas = [];
-
-for (item in data) {
-  personas.push(new Persona(data[item][0], data[item][1]));
-}
-
-const obtenerInfoPersonaName = (position) => {
-  return new Promise((res, rej) => {
-    if (personas[position] == "undefined") {
-      rej("no existe le nombre la persona en tal posicion");
-    } else {
-      res(personas[position].name);
-    }
-  });
+  container.classList.add("bg_001");
+  container.append(fragmento);
 };
 
-const obtenerInfoPersonaIG = (position) => {
-  return new Promise((res, rej) => {
-    if (personas[position] == "undefined") {
-      rej("no existe el ig de la persona");
-    } else {
-      res(personas[position].ig);
-    }
-  });
-};
-
-position = 1;
-
-obtenerInfoPersonaName(position)
-  .then((rpta) => {
-    console.log(rpta);
-    return obtenerInfoPersonaIG(position);
-  })
-  .then((rpta) => console.log(rpta));
+getInfoUser();

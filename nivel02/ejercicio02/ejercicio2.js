@@ -1,38 +1,18 @@
+//
 const sendButton = document.getElementById("snd-nota");
-
+//
 sendButton.addEventListener("click", () => {
   let resultado, mensaje;
   try {
     nota = parseInt(document.getElementById("nota").value);
-
-    resultado = categoria(nota);
-    mensaje = verificar(nota);
+    resultado = categoria(nota); // return string
+    mensaje = verificar(nota); // return string
   } catch (e) {
     resultado = "esto es el try catch de resultado ";
     mensaje = "try catch de mensaje ";
   }
-
   abrilmodal(resultado, mensaje);
 });
-
-const abrilmodal = (resultado, mensaje) => {
-  console.log(resultado,mensaje);
-  document.querySelector(".resultado").innerHTML = resultado;
-  document.querySelector(".mensaje").innerHTML = mensaje;
-  let modal = document.querySelector(".modal-background");
-  modal.style.display = "flex";
-  modal.style.animation = "showanimatemodal 1s forwards";
-};
-
-const verificar = (nota) => {
-  (n1 = 8), (n2 = 5);
-  promedio = (n1 + n2 + nota) / 3;
-  if (promedio >= 7) {
-    return "<span class='green'>Aprobado</span>";
-  } else {
-    return "<span class='red'>Desaprobado</span>";
-  }
-};
 
 const categoria = (nota) => {
   let resultado;
@@ -71,4 +51,24 @@ const categoria = (nota) => {
       resultado = null;
   }
   return resultado;
+};
+
+const verificar = (nota) => {
+  (n1 = 8), (n2 = 5);
+  promedio = (n1 + n2 + nota) / 3;
+  if (promedio >= 7) {
+    return "<span class='green'>Aprobado</span>";
+  } else {
+    return "<span class='red'>Desaprobado</span>";
+  }
+};
+
+const abrilmodal = (resultado, mensaje) => {
+
+  document.querySelector(".resultado").innerHTML = resultado;
+  document.querySelector(".mensaje").innerHTML = mensaje;
+  //
+  let modal = document.querySelector(".modal-background");
+  modal.style.display = "flex";
+  modal.style.animation = "showanimatemodal 1s forwards";
 };

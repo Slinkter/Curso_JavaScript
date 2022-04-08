@@ -9,18 +9,9 @@ const getName = async () => {
   peticion = await fetch("https://reqres.in/api/users?page=2");
   resultado = await peticion.json();
   //
-  console.log(" 1 - Peticion :");
-  console.log(peticion);
-  console.log(" ");
-  console.log(" 2 - Resultado :");
-  console.log(resultado);
-  console.log(resultado.data);
-  console.log(" ");
-  //
   let array_data = resultado.data;
   //
   for (elemento in array_data) {
-   
     div_first_name = document.createElement("DIV");
     div_last_name = document.createElement("DIV");
     div_email = document.createElement("DIV");
@@ -36,12 +27,12 @@ const getName = async () => {
 
     //   div.innerHTML = array_data[elemento].avatar;
 
-/*     
+    /*     
     document.body.appendChild(div_first_name);
     document.body.appendChild(div_last_name);
     document.body.appendChild(div_email); */
-    fragmento.appendChild(document.createElement("BR"))
-    fragmento.appendChild(div_first_name);  
+    fragmento.appendChild(document.createElement("BR"));
+    fragmento.appendChild(div_first_name);
     fragmento.appendChild(div_last_name);
     fragmento.appendChild(div_email);
   }

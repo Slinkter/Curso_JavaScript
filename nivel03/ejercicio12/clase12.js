@@ -11,10 +11,7 @@ const crearCookies = (name, dias) => {
 
 crearCookies("usuario=dalto", "4");
 
-const obtenerCookie = cookie => {
-
-    let cookies = document.cookie;
-    cookies = cookies.split(";")
-
-
-}
+const obtenerCookie = (cookie) => {
+  let cookies = document.cookie;
+  cookies = cookies.split(";");
+};

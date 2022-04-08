@@ -4,6 +4,7 @@ const fecha01 =  Date()
 // fecha02 ahora es un objeto que tiene metodos
 const fecha02 = new Date()
 console.log(fecha01);
+//
 console.log(fecha02.getDate());
 console.log("Día  " + fecha02.getDay() );
 console.log("Año  " + fecha02.getFullYear() );

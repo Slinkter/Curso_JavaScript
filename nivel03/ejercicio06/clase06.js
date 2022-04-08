@@ -30,28 +30,29 @@ const transferirTextura = (n, e) => {
 
 
 */
-
+//
 const input_archivo = document.getElementById("archivo");
+//
 input_archivo.addEventListener("change", (e) => {
-  ReaderFile(input_archivo.files[0]);
+  let file = input_archivo.files[0];
+  func_ReaderFile(file);
 });
-
-const ReaderFile = (file_element) => {
+//
+const func_ReaderFile = (file_element) => {
+  //
   const reader = new FileReader();
   reader.readAsText(file_element);
   reader.addEventListener("load", (e) => {
     // convertir de texto a json
-    // console.log( typeof e.currentTarget.result);
-    // console.log( JSON.parse(e.currentTarget.result) );
-    // recoger con un for
     let array_data = JSON.parse(e.currentTarget.result);
+    //
     for (let element in array_data) {
-      console.log(array_data[element]);
+      //
       let id = array_data[element].id;
       let name = array_data[element].name;
       let username = array_data[element].username;
       let mail = array_data[element].email;
-
+      //
       document.write(`<br> ===== ${id} ===== <br> `);
       document.write(`Name  : ${name}<br> `);
       document.write(`Username  : ${username}<br> `);

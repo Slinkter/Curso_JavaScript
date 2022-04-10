@@ -4,15 +4,15 @@ document.write("Array original :<b>[" + nombres + "]</b> <br>  <br>");
 let resultado = nombres.pop();
 document.write(
   "<span >----> Método .pop() : valor saliente </span> <b>" +
-    resultado +
-    "</b> <br><br>"
+  resultado +
+  "</b> <br><br>"
 );
 document.write("Array  modificado : <b>[" + nombres + "]</b><br><br>");
 resultado = nombres.push("Angelica");
 document.write(
   "----> Método .push(Angelica) : valor entrante <b>" +
-    nombres[resultado - 1] +
-    "</b> <br><br>"
+  nombres[resultado - 1] +
+  "</b> <br><br>"
 );
 document.write("Array modificado <b>[" + nombres + "]</b><br><br>");
 

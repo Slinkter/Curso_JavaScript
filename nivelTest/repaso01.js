@@ -163,13 +163,54 @@ m4.unshift("alberto", "lola", "kiara", "carmen");
 console.log(m4);
 //
 console.log("Eliminar segun index-position  con rango ");
-m4.splice(0,1)
+m4.splice(0, 1);
 console.log(m4);
 //
 console.log("Remplazo segun index-position  con rango ");
-m4.splice(0,1,"carolina")
+m4.splice(0, 1, "carolina");
 console.log(m4);
 //
 lista_nombres = ["pedro", "beto", "zoila", "jorge", "ana"];
 console.log("Separadores con   - ");
-console.log( lista_nombres.join(","))
+console.log(lista_nombres.join(","));
+console.groupEnd();
+console.group("8. Metodos de repeticion");
+let array_lista = [
+  "compras",
+  "ventas",
+  "operaciones",
+  "marketing",
+  "colegio",
+  "universidad",
+];
+console.group("8.1 .map()");
+const areas = array_lista.map((item) => {
+  return "area " + item;
+});
+console.log(areas);
+console.groupEnd();
+console.group("8.2 .filter()");
+let lista_aux = [];
+const rpta = array_lista.filter((item) => {
+  if (item === "universidad") {
+    console.log("si son iguales");
+    lista_aux.push(item);
+  } else {
+    console.log("no son iguales , ", item);
+  }
+});
+console.log(lista_aux);
+console.groupEnd();
+console.group("8.3 .reduce()");
+console.groupEnd();
+
+console.group("8.4 .forEach()");
+array_lista.forEach((item) => {
+  if (1 < item.length) {
+    console.log(item);
+  }
+});
+
+console.groupEnd();
+
+console.groupEnd();

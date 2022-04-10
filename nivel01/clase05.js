@@ -15,11 +15,12 @@ document.write(
     "</b> <br><br>"
 );
 document.write("Array modificado <b>[" + nombres + "]</b><br><br>");
-resultado = nombres.reverse();
+
 document.write("----> Método .reverse() :  <b>" + "</b> <br><br>");
+resultado = nombres.reverse();
 document.write("Array modificado <b>[" + nombres + "]</b><br><br>");
-resultado = nombres.unshift("a", "b");
 document.write("----> Método .unshift(a,b) :  <b>" + "</b> <br><br>");
+resultado = nombres.unshift("a", "b");
 document.write("Array modificado <b>[" + nombres + "]</b><br><br>");
 resultado = nombres.sort();
 document.write("----> Método .sort():  <b>" + "</b> <br><br>");

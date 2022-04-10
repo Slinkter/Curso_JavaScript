@@ -1,4 +1,4 @@
-//-----> Metodos de seleccion elemtos
+//-----> Metodos de seleccion elemetos
 // .getElementById
 // .getElementByTagName("p")
 // .querySelector

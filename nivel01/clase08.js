@@ -11,7 +11,7 @@ contenedor.appendChild(item);
 for (let i = 0; i < 5; i++) {
   const element = document.createElement("LI");
   element.innerHTML = `Este es un item de la lista ${i}`;
-  element.style.background= "green"
+  element.style.background = "green";
   fragmento.appendChild(element);
 }
 //
@@ -20,5 +20,4 @@ contenedor.appendChild(fragmento);
 const primierhijo = contenedor.firstElementChild;
 const ultimohijo = contenedor.lastElementChild;
 const hijos = contenedor.childNodes;
-const array = [...hijos]
-
+const array = [...hijos];

@@ -1,4 +1,4 @@
-// 8:53:22
+
 const contenedor = document.querySelector(".contenedor");
 const fragmento = document.createDocumentFragment();
 const text = document.createTextNode("Item 1");

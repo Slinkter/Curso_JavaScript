@@ -82,7 +82,7 @@ btn_send.addEventListener("click", () => {
   //
   let nota, resultado, mensaje;
   try {
-    nota = parseInt(prompt("ingresa nota ", "nota "));
+    nota = parseInt(prompt("ingresa nota ", "escriba un numero "));
     resultado = func_resultado(nota);
     promedio = func_promedio(nota);
   } catch (error) {
@@ -113,3 +113,77 @@ function func_promedio(nota) {
 
   return promedio;
 }
+
+const bnt_calc = document.querySelector(".bnt-calc");
+console.log(bnt_calc);
+bnt_calc.addEventListener("click", () => {
+  /*  alert("boton funciona"); */
+  let input;
+  let categoria;
+  let promedio;
+  try {
+    input = parseInt(prompt("Ingresar nota de examen"));
+    categoria = func_categoria(input);
+    promedio = func_promedio(input);
+    rpta = `Su nota es ${input}  y usted esta ${categoria} y su promedio es ${promedio}`;
+    console.log(rpta);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+function func_categoria(nota) {
+  let msj_categoria;
+  if (nota < 11) {
+    msj_categoria = "jalado";
+  } else if (nota >= 11 && nota <= 20) {
+    msj_categoria = "aprobado";
+  } else {
+    msj_categoria = "nota invalida";
+  }
+  return msj_categoria;
+}
+
+function func_promedio(nota) {
+  n1 = 15;
+  n2 = 14;
+  let suma = n1 + n2 + nota;
+  let promedio = suma / 3;
+  return promedio;
+}
+/* ========== */
+const data = [
+  ["luis cave", "@luiscave"], // posicion 0
+  ["kiara keter", "@kariaketer"], // posicion 1
+  ["Jorge Camacho", "@jorgecamacho"],
+  ["Norma flores", "@floresnorma"],
+  ["mauro jiro", "@jirom"], // posicion 5
+];
+
+class Persona {
+  constructor(nombre, ig) {
+    this.name = nombre;
+    this.instagram = ig;
+  }
+}
+
+let lista_personas = [];
+for (item in data) {
+  lista_personas.push(new Persona(data[item][0], data[item][1]));
+}
+/* console.log(lista_personas); */
+
+function obtenerNamebyPosition(position) {
+  return new Promise((resolse, reject) => {
+    /*  */
+    if (lista_personas[position] == "undefined") {
+      reject("no existe la position ");
+    } else {
+      let nombre = lista_personas[position].name;
+      resolse(`el nombre es ${nombre}`);
+    }
+  });
+}
+
+let position = 1;
+obtenerNamebyPosition(position).then((rpta) => console.log(rpta));

@@ -12,20 +12,21 @@ const obtenerMateria = (id) => {
   return new Promise((resolve, reject) => {
     materia = materias[id];
     if (materia == undefined) {
-        reject("la materia no existe");
+      reject("la materia no existe");
     } else {
-      setTimeout(()=>{resolve(materia)}, Math.random() * 4000);
+      setTimeout(() => {
+        resolve(materia);
+      }, Math.random() * 4000);
     }
   });
 };
 
-
 const devolverMaterias = async () => {
   let materia = [];
+  let newHTMLCode = ``;
   for (elemento in materias) {
     materia[elemento] = await obtenerMateria(elemento);
-    console.log(materia[elemento]);
-    let newHTMLCode = `
+    newHTMLCode = `
     <div class="materia">
             <div class="nombre">
                ${materia[elemento].nombre}
@@ -33,11 +34,10 @@ const devolverMaterias = async () => {
             <div class="nota">
             ${materia[elemento].nota}
             </div>
-        </div>
-    `;
+        </div>    `;
 
-    materiaHTML.innerHTML += newHTMLCode
+    materiaHTML.innerHTML += newHTMLCode;
   }
 };
 
-devolverMaterias()
+devolverMaterias();
